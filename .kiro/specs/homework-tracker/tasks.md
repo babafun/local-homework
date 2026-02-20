@@ -2,16 +2,17 @@
 
 ## Overview
 
-This implementation plan breaks down the Homework Tracker MVP into discrete coding tasks. The approach follows a bottom-up strategy: first implementing core data structures and storage, then business logic, and finally the UI layer. Each task builds incrementally, with property-based tests integrated throughout to validate correctness early.
+This implementation plan breaks down the Homework Tracker MVP into discrete coding tasks. The approach follows a bottom-up strategy: first implementing core data structures and storage, then business logic, and finally the UI layer. The project uses Vite as the build tool and development server, providing fast HMR during development and optimized production builds. Each task builds incrementally, with property-based tests integrated throughout to validate correctness early.
 
 ## Tasks
 
-- [x] 1. Set up project structure and dependencies
-  - Create project directory structure (src/, tests/, public/)
-  - Initialize package.json with TypeScript, Jest, and fast-check dependencies
-  - Configure TypeScript (tsconfig.json) for ES6+ with strict mode
-  - Configure Jest for TypeScript testing
-  - Create index.html with basic structure
+- [x] 1. Set up project structure and Vite configuration
+  - Create project directory structure (src/, tests/)
+  - Initialize package.json with Vite, TypeScript, Vitest, and fast-check dependencies
+  - Configure TypeScript (tsconfig.json) for ES6+ with strict mode and DOM types
+  - Create vite.config.ts with Vitest configuration and DOM environment support
+  - Create index.html in project root (Vite entry point)
+  - Configure Vite to serve static assets and handle TypeScript compilation
   - _Requirements: 6.1, 6.2, 6.3_
 
 - [x] 2. Implement data models and storage layer
@@ -40,13 +41,13 @@ This implementation plan breaks down the Homework Tracker MVP into discrete codi
     - Test LocalStorage unavailable scenario
     - _Requirements: 4.5_
 
-- [ ] 3. Implement HomeworkManager business logic
-  - [ ] 3.1 Create HomeworkManager class with constructor
+- [x] 3. Implement HomeworkManager business logic
+  - [x] 3.1 Create HomeworkManager class with constructor
     - Initialize with StorageService dependency
     - Load existing items from storage on construction
     - _Requirements: 3.1, 4.4_
   
-  - [ ] 3.2 Implement addHomework() method
+  - [x] 3.2 Implement addHomework() method
     - Validate title, subject, and due date inputs
     - Generate unique ID using UUID
     - Create HomeworkItem with completed: false
@@ -69,11 +70,11 @@ This implementation plan breaks down the Homework Tracker MVP into discrete codi
     - **Property 10: Add persistence round-trip**
     - **Validates: Requirements 4.1**
 
-- [ ] 4. Checkpoint - Ensure core data layer tests pass
+- [x] 4. Checkpoint - Ensure core data layer tests pass
   - Ensure all tests pass, ask the user if questions arise.
 
-- [ ] 5. Implement homework state management
-  - [ ] 5.1 Implement toggleCompletion() method
+- [x] 5. Implement homework state management
+  - [x] 5.1 Implement toggleCompletion() method
     - Find item by ID
     - Flip completed boolean
     - Persist changes to storage
@@ -91,7 +92,7 @@ This implementation plan breaks down the Homework Tracker MVP into discrete codi
     - **Property 11: Modification persistence round-trip**
     - **Validates: Requirements 4.2**
   
-  - [ ] 5.5 Implement deleteHomework() method
+  - [x] 5.5 Implement deleteHomework() method
     - Find and remove item by ID
     - Persist changes to storage
     - _Requirements: 5.1, 5.2, 4.3_
@@ -100,7 +101,7 @@ This implementation plan breaks down the Homework Tracker MVP into discrete codi
     - **Property 12: Deletion removes item completely**
     - **Validates: Requirements 4.3, 5.1, 5.2, 5.4**
   
-  - [ ] 5.7 Implement getAllHomework() method
+  - [x] 5.7 Implement getAllHomework() method
     - Return items sorted by dueDate ascending
     - _Requirements: 3.2_
   
@@ -115,14 +116,16 @@ This implementation plan breaks down the Homework Tracker MVP into discrete codi
 - [ ] 6. Checkpoint - Ensure business logic tests pass
   - Ensure all tests pass, ask the user if questions arise.
 
-- [ ] 7. Implement UI structure and styling
-  - [ ] 7.1 Create HTML structure in index.html
+- [x] 7. Implement UI structure and styling
+  - [x] 7.1 Create HTML structure in index.html
     - Add form for adding homework (title, subject, due date inputs)
     - Add container for homework list display
     - Add error message display area
+    - Link to main.ts as module entry point
+    - Link to style.css for styling
     - _Requirements: 7.1, 7.2_
   
-  - [ ] 7.2 Create CSS styles (styles.css)
+  - [x] 7.2 Create CSS styles (src/style.css)
     - Style form inputs and buttons for clarity
     - Style homework list items with adequate spacing
     - Add visual distinction for completed items (strikethrough, different color)
@@ -130,18 +133,18 @@ This implementation plan breaks down the Homework Tracker MVP into discrete codi
     - Use age-appropriate color scheme and typography
     - _Requirements: 2.4, 6.4, 6.5, 7.3, 7.5_
   
-  - [ ] 7.3 Add empty state message styling
+  - [x] 7.3 Add empty state message styling
     - Style message for when homework list is empty
     - _Requirements: 3.4_
 
-- [ ] 8. Implement UIController
-  - [ ] 8.1 Create UIController class with initialization
+- [x] 8. Implement UIController
+  - [x] 8.1 Create UIController class with initialization
     - Accept HomeworkManager dependency
     - Cache DOM element references
     - Attach event listeners to form and buttons
     - _Requirements: 7.1, 7.2_
   
-  - [ ] 8.2 Implement renderHomeworkList() method
+  - [x] 8.2 Implement renderHomeworkList() method
     - Clear existing list display
     - Show empty state message if no items
     - Render each homework item with title, subject, due date, completion status
@@ -157,7 +160,7 @@ This implementation plan breaks down the Homework Tracker MVP into discrete codi
     - **Property 6: Visual distinction for completed items**
     - **Validates: Requirements 2.4**
   
-  - [ ] 8.5 Implement handleAddHomework() method
+  - [x] 8.5 Implement handleAddHomework() method
     - Get form input values
     - Clear any existing error messages
     - Call manager.addHomework() with validation
@@ -166,18 +169,18 @@ This implementation plan breaks down the Homework Tracker MVP into discrete codi
     - Clear form inputs on success
     - _Requirements: 1.1, 1.2, 1.3, 1.4, 7.4_
   
-  - [ ] 8.6 Implement handleToggleCompletion() method
+  - [x] 8.6 Implement handleToggleCompletion() method
     - Call manager.toggleCompletion() with item ID
     - Re-render homework list to show updated state
     - _Requirements: 2.1, 2.2, 7.4_
   
-  - [ ] 8.7 Implement handleDeleteHomework() method
+  - [x] 8.7 Implement handleDeleteHomework() method
     - Show confirmation dialog before deletion
     - Call manager.deleteHomework() if confirmed
     - Re-render homework list
     - _Requirements: 5.1, 5.3, 5.4_
   
-  - [ ] 8.8 Implement error display methods
+  - [x] 8.8 Implement error display methods
     - showError() to display validation errors
     - clearError() to remove error messages
     - _Requirements: 1.2, 1.3, 1.4_
@@ -189,8 +192,9 @@ This implementation plan breaks down the Homework Tracker MVP into discrete codi
     - Test delete button shows confirmation
     - _Requirements: 1.1, 1.2, 2.1, 5.3_
 
-- [ ] 9. Wire everything together in main application
-  - [ ] 9.1 Create main.ts entry point
+- [x] 9. Wire everything together in main application
+  - [x] 9.1 Create main.ts entry point
+    - Import CSS file for Vite to process
     - Check LocalStorage availability
     - Instantiate StorageService
     - Instantiate HomeworkManager with StorageService
@@ -199,10 +203,11 @@ This implementation plan breaks down the Homework Tracker MVP into discrete codi
     - Display warning if LocalStorage unavailable
     - _Requirements: 4.5, 6.1, 6.2, 6.3_
   
-  - [ ] 9.2 Configure build process
-    - Set up TypeScript compilation
-    - Bundle JavaScript for browser
-    - Copy HTML and CSS to output directory
+  - [x] 9.2 Verify Vite build configuration
+    - Ensure TypeScript compilation works correctly
+    - Verify Vite bundles JavaScript and CSS properly
+    - Test dev server with HMR
+    - Test production build output
     - _Requirements: 6.1, 6.2, 6.3_
 
 - [ ] 10. Final checkpoint and integration testing
@@ -228,6 +233,9 @@ This implementation plan breaks down the Homework Tracker MVP into discrete codi
 - Tasks marked with `*` are optional and can be skipped for faster MVP delivery
 - Each task references specific requirements for traceability
 - Property-based tests use fast-check library with minimum 100 iterations
+- Vitest is used as the test runner, configured in vite.config.ts
 - Checkpoints ensure incremental validation at key milestones
 - Manual testing in task 10.2 verifies browser compatibility and responsive design
 - All property tests should be tagged with comments: `// Feature: homework-tracker, Property N: [property text]`
+- Vite handles TypeScript compilation, bundling, and dev server with HMR
+- CSS is imported in main.ts for Vite to process and bundle

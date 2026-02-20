@@ -2,7 +2,9 @@
 
 ## Overview
 
-The Homework Tracker is a client-side web application built with HTML, CSS, and TypeScript that provides a simple interface for students to manage their homework assignments. The application follows a straightforward architecture with three main layers: UI components, business logic, and data persistence. All data is stored locally in the browser's LocalStorage, eliminating the need for backend infrastructure or user authentication.
+The Homework Tracker is a client-side web application built with Vite, vanilla TypeScript, HTML, and CSS that provides a simple interface for students to manage their homework assignments. The application follows a straightforward architecture with three main layers: UI components, business logic, and data persistence. All data is stored locally in the browser's LocalStorage, eliminating the need for backend infrastructure or user authentication.
+
+Vite serves as the build tool and development server, providing fast hot module replacement (HMR) during development and optimized production builds. The application uses vanilla TypeScript without any frameworks, keeping the codebase simple and lightweight.
 
 The application is designed to be intuitive for users aged 11-16, with a clean interface that prioritizes ease of use over feature complexity. The system handles homework items as immutable data structures, with all state changes resulting in new objects being created and persisted.
 
@@ -257,12 +259,15 @@ Tests will be tagged with comments referencing the design document properties:
 // Feature: homework-tracker, Property 1: [property text]
 ```
 
+Vitest will be used as the test runner, configured to work seamlessly with Vite's build pipeline.
+
 ### Test Configuration
 
-- **Framework**: Jest for unit tests, fast-check for property-based tests
+- **Framework**: Vitest for unit tests (Vite-native test runner), fast-check for property-based tests
 - **Coverage target**: 80% code coverage minimum
 - **Property test iterations**: 100 minimum per property
 - **Test organization**: Tests colocated with source files (e.g., `HomeworkManager.test.ts`)
+- **Vitest configuration**: Configured in `vite.config.ts` with DOM environment support
 
 
 
