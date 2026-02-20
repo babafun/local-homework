@@ -5,6 +5,8 @@ Picture this. It's near the end of a lesson. Your teacher isn't very tech-savvy.
 You know you aren't going to remember. You know you don't want to face his wrath. And you need to log it fast, before any unnecessary suspicion is caused.
 So you need to get to a place where you can quickly add a task in a few seconds so that you don't attract any attention from teachers or students. That's where LocalHW comes in.
 
+[Visit LocalHW right now!](https://babafun.github.io/local-homework/)
+
 ## Why LocalHW?
 Because it's one of the fastest (if not THE fastest) ways to be able to remind yourself of a task.
 We have:
