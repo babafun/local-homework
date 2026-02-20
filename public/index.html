@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Homework Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Homework Tracker</h1>
+    </header>
+    
+    <main>
+      <section class="add-homework-section">
+        <h2>Add New Homework</h2>
+        <div id="error-message" class="error-message hidden"></div>
+        <form id="add-homework-form">
+          <div class="form-group">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" name="subject" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="due-date">Due Date:</label>
+            <input type="date" id="due-date" name="dueDate" required>
+          </div>
+          
+          <button type="submit" class="btn btn-primary">Add Homework</button>
+        </form>
+      </section>
+      
+      <section class="homework-list-section">
+        <h2>My Homework</h2>
+        <div id="homework-list" class="homework-list">
+          <!-- Homework items will be rendered here -->
+        </div>
+      </section>
+    </main>
+  </div>
+  
+  <script type="module" src="../dist/main.js"></script>
+</body>
+</html>

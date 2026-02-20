@@ -1,0 +1,24 @@
+{
+  "name": "homework-tracker",
+  "version": "1.0.0",
+  "description": "A simple web-based homework tracking application for students",
+  "main": "dist/main.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "build": "tsc",
+    "dev": "tsc --watch"
+  },
+  "keywords": ["homework", "tracker", "student"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^29.5.0",
+    "@types/node": "^20.0.0",
+    "jest": "^29.5.0",
+    "jest-environment-jsdom": "^29.5.0",
+    "ts-jest": "^29.1.0",
+    "typescript": "^5.0.0",
+    "fast-check": "^3.15.0"
+  }
+}
