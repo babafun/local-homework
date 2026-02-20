@@ -4,15 +4,21 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-  <title>Homework Tracker</title>
+  <title>Homework Tracker - Add Task</title>
   <link rel="stylesheet" href="style.css" type="text/css"/>
 </head>
 <body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-brand">Hassle-Free HW Recording</div>
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="index.html" class="nav-link active">Add Task</a></li>
+        <li class="nav-item"><a href="view-tasks.html" class="nav-link">View Tasks</a></li>
+      </ul>
+    </div>
+  </nav>
+
   <div class="container">
-    <header>
-      <h1>Homework Tracker</h1>
-    </header>
-    
     <main>
       <section class="add-homework-section">
         <h2>Add New Homework</h2>
@@ -36,14 +42,12 @@
           <button type="submit" class="btn btn-primary">Add Homework</button>
         </form>
       </section>
-      
-      <section class="homework-list-section">
-        <h2>My Homework</h2>
-        <div id="homework-list" class="homework-list">
-          <!-- Homework items will be rendered here -->
-        </div>
-      </section>
     </main>
+  </div>
+  
+  <div id="storage-notice" class="storage-notice">
+    <p>This page uses local storage (and possibly cookies in future) to function. Clearing your cache may wipe out all tasks. By using this website, you agree to this happening.</p>
+    <button id="dismiss-notice" class="btn-dismiss">ok whatever</button>
   </div>
   
   <script type="module" src="../src/main.ts"></script>

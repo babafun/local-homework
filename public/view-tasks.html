@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  <title>Homework Tracker - View Tasks</title>
+  <link rel="stylesheet" href="style.css" type="text/css"/>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-brand">Hassle-Free Homework Checking</div>
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="index.html" class="nav-link">Add Task</a></li>
+        <li class="nav-item"><a href="view-tasks.html" class="nav-link active">View Tasks</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container view-tasks-container">
+    <aside class="filter-sidebar">
+      <h3>Sort By</h3>
+      <div class="filter-options">
+        <label class="filter-option">
+          <input type="radio" name="sort" value="dueDate" checked>
+          <span>Due Date</span>
+        </label>
+        <label class="filter-option">
+          <input type="radio" name="sort" value="subject">
+          <span>Subject</span>
+        </label>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <section class="homework-list-section">
+        <h2>My Homework</h2>
+        <div id="homework-list" class="homework-list">
+          <!-- Homework items will be rendered here -->
+        </div>
+      </section>
+    </main>
+  </div>
+  
+  <div id="storage-notice" class="storage-notice">
+    <p>This page uses local storage (and possibly cookies in future) to function. Clearing your cache may wipe out all tasks. By using this website, you agree to this happening.</p>
+    <button id="dismiss-notice" class="btn-dismiss">ok whatever</button>
+  </div>
+  
+  <script type="module" src="../src/view-tasks.ts"></script>
+</body>
+</html>
