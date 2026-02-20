@@ -28,15 +28,15 @@ This implementation plan breaks down the Homework Tracker MVP into discrete codi
     - Handle Date serialization/deserialization
     - _Requirements: 4.1, 4.2, 4.3, 4.5_
   
-  - [ ]* 2.3 Write property test for serialization round-trip
+  - [x] 2.3 Write property test for serialization round-trip
     - **Property 14: Serialization round-trip**
     - **Validates: Requirements 4.1, 4.2**
   
-  - [ ]* 2.4 Write property test for corrupted data handling
+  - [x] 2.4 Write property test for corrupted data handling
     - **Property 13: Corrupted data handling**
     - **Validates: Requirements 4.5**
   
-  - [ ]* 2.5 Write unit tests for StorageService edge cases
+  - [x] 2.5 Write unit tests for StorageService edge cases
     - Test empty storage returns empty array
     - Test LocalStorage unavailable scenario
     - _Requirements: 4.5_
@@ -54,19 +54,19 @@ This implementation plan breaks down the Homework Tracker MVP into discrete codi
     - Add to items array and persist to storage
     - _Requirements: 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 4.1_
   
-  - [ ]* 3.3 Write property test for valid homework creation
+  - [x] 3.3 Write property test for valid homework creation
     - **Property 1: Valid homework creation**
     - **Validates: Requirements 1.1, 1.6**
   
-  - [ ]* 3.4 Write property test for input validation
+  - [x] 3.4 Write property test for input validation
     - **Property 2: Input validation rejects invalid data**
     - **Validates: Requirements 1.2, 1.3, 1.4**
   
-  - [ ]* 3.5 Write property test for unique ID assignment
+  - [x] 3.5 Write property test for unique ID assignment
     - **Property 3: Unique ID assignment**
     - **Validates: Requirements 1.5**
   
-  - [ ]* 3.6 Write property test for add persistence round-trip
+  - [x] 3.6 Write property test for add persistence round-trip
     - **Property 10: Add persistence round-trip**
     - **Validates: Requirements 4.1**
 
@@ -80,15 +80,15 @@ This implementation plan breaks down the Homework Tracker MVP into discrete codi
     - Persist changes to storage
     - _Requirements: 2.1, 2.2, 2.3_
   
-  - [ ]* 5.2 Write property test for toggle completion
+  - [x] 5.2 Write property test for toggle completion
     - **Property 4: Toggle completion flips state**
     - **Validates: Requirements 2.1, 2.2**
   
-  - [ ]* 5.3 Write property test for completion persistence
+  - [x] 5.3 Write property test for completion persistence
     - **Property 5: Completion persistence round-trip**
     - **Validates: Requirements 2.3**
   
-  - [ ]* 5.4 Write property test for modification persistence
+  - [x] 5.4 Write property test for modification persistence
     - **Property 11: Modification persistence round-trip**
     - **Validates: Requirements 4.2**
   
@@ -97,7 +97,7 @@ This implementation plan breaks down the Homework Tracker MVP into discrete codi
     - Persist changes to storage
     - _Requirements: 5.1, 5.2, 4.3_
   
-  - [ ]* 5.6 Write property test for deletion
+  - [x] 5.6 Write property test for deletion
     - **Property 12: Deletion removes item completely**
     - **Validates: Requirements 4.3, 5.1, 5.2, 5.4**
   
@@ -105,15 +105,15 @@ This implementation plan breaks down the Homework Tracker MVP into discrete codi
     - Return items sorted by dueDate ascending
     - _Requirements: 3.2_
   
-  - [ ]* 5.8 Write property test for sort order
+  - [x] 5.8 Write property test for sort order
     - **Property 8: Due date sort order invariant**
     - **Validates: Requirements 3.2**
   
-  - [ ]* 5.9 Write property test for storage load
+  - [x] 5.9 Write property test for storage load
     - **Property 7: Storage load retrieves all items**
     - **Validates: Requirements 3.1, 4.4**
 
-- [ ] 6. Checkpoint - Ensure business logic tests pass
+- [x] 6. Checkpoint - Ensure business logic tests pass
   - Ensure all tests pass, ask the user if questions arise.
 
 - [x] 7. Implement UI structure and styling
@@ -152,11 +152,11 @@ This implementation plan breaks down the Homework Tracker MVP into discrete codi
     - Apply visual styling based on completion status
     - _Requirements: 3.1, 3.3, 3.4, 2.4_
   
-  - [ ]* 8.3 Write property test for rendered fields
+  - [x] 8.3 Write property test for rendered fields
     - **Property 9: Rendered items contain required fields**
     - **Validates: Requirements 3.3**
   
-  - [ ]* 8.4 Write property test for visual distinction
+  - [x] 8.4 Write property test for visual distinction
     - **Property 6: Visual distinction for completed items**
     - **Validates: Requirements 2.4**
   
@@ -185,7 +185,7 @@ This implementation plan breaks down the Homework Tracker MVP into discrete codi
     - clearError() to remove error messages
     - _Requirements: 1.2, 1.3, 1.4_
   
-  - [ ]* 8.9 Write unit tests for UI interactions
+  - [x] 8.9 Write unit tests for UI interactions
     - Test form submission with valid data
     - Test form submission with invalid data shows error
     - Test toggle button updates completion
@@ -210,8 +210,8 @@ This implementation plan breaks down the Homework Tracker MVP into discrete codi
     - Test production build output
     - _Requirements: 6.1, 6.2, 6.3_
 
-- [ ] 10. Final checkpoint and integration testing
-  - [ ]* 10.1 Write integration tests for complete workflows
+- [x] 10. Final checkpoint and integration testing
+  - [x] 10.1 Write integration tests for complete workflows
     - Test add → display → toggle → delete flow
     - Test persistence across page reloads
     - Test multiple homework items interaction
