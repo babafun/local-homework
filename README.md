@@ -12,7 +12,7 @@ Because it's one of the fastest (if not THE fastest) ways to be able to remind y
 We have:
 - No signups required to set a task! This is probably the thing that makes it faster than anything you'd use.
 - Lightweight and simple! You literally fill out three text fields and click a button. That's 4 clicks and around 10 seconds of typing.
-- Secure and private! All data is stored locally on your device. (Don't clear your cache until you've finished your HW!) I might add an export feature in future, but it won't be required to use.
+- Secure and private! All data is stored locally on your device. (Don't clear your cache until you've finished your HW, as some browsers also clear persistent local storage, which is needed for the homework!) I might add an export feature in future, but it won't be required to use.
 - Free and [open source](LICENSE)! ...although given you're here you already know that, don't you?
 
 ## Plans for the future
